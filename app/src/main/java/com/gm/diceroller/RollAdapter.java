@@ -30,7 +30,7 @@ public class RollAdapter extends ArrayAdapter<RollModel>{
 
         TextView txtRoll = (TextView) convertView.findViewById(R.id.txtRoll);
 
-        txtRoll.setText(roll.roll);
+        txtRoll.setText(roll.getRoll());
 
         return convertView;
 

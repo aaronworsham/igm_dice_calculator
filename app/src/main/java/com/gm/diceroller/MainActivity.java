@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         final ArrayList<RollModel> rolls = new ArrayList<RollModel>();
-        rolls.add(new RollModel("4"));
-        rolls.add(new RollModel("5"));
 
 
         final RollAdapter adapter = new RollAdapter(this, rolls);
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         final Button buttond12 = (Button) findViewById(R.id.button_d12);
         final Button buttond20 = (Button) findViewById(R.id.button_d20);
         final Button buttond100 = (Button) findViewById(R.id.button_d100);
-        final Button sum = (Button) findViewById(R.id.sum);
+        final Button buttonClear = (Button) findViewById(R.id.clear);
 
         OnClickListener bListener = new View.OnClickListener() {
             public void onClick(View v) {
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                          die = new DiceRoller(100);
                         break;
                 }
-                String r = die.roll().toString();
+                int r = die.roll();
                 rolls.add(0, new RollModel(r));
                 adapter.notifyDataSetChanged();
             }
@@ -89,6 +87,13 @@ public class MainActivity extends AppCompatActivity {
         buttond12.setOnClickListener(bListener);
         buttond20.setOnClickListener(bListener);
         buttond100.setOnClickListener(bListener);
+
+        buttonClear.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View c){
+                rolls.clear();
+                adapter.notifyDataSetChanged();
+            }
+        });
 
 
     }

@@ -8,5 +8,5 @@
     <string name="dice_d12">12</string>
     <string name="dice_d20">20</string>
     <string name="dice_d100">100</string>
-    <string name="sum">Sum</string>
+    <string name="clear">Clear</string>
 </resources>

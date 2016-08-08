@@ -41,8 +41,8 @@
             android:text="@string/dice_d100"
             android:layout_gravity="left|top" />
         <Button
-            android:id="@+id/sum"
-            android:text="@string/sum"
+            android:id="@+id/clear"
+            android:text="@string/clear"
             android:layout_gravity="left|top" />
     </GridLayout>
     <ListView

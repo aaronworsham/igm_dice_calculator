@@ -4,13 +4,17 @@ package com.gm.diceroller;
  * Created by aaronworsham on 7/25/16.
  */
 public class RollModel {
-    public String roll;
+    public int roll;
     public RollModel(){
         super();
     }
 
-    public RollModel(String str){
+    public RollModel(int num){
         super();
-        this.roll = str;
+        this.roll = num;
+    }
+
+    public String getRoll(){
+        return String.valueOf(roll);
     }
 }
