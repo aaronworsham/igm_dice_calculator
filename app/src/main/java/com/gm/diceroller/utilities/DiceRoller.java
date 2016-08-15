@@ -1,4 +1,4 @@
-package com.gm.diceroller;
+package com.gm.diceroller.utilities;
 
 import android.widget.TextView;
 

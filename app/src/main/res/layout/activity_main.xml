@@ -10,46 +10,72 @@
         android:id="@+id/grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="4"
-        android:rowCount="2">
+        android:columnCount="7"
+        android:rowCount="2"
+        android:layout_alignParentTop="true">
         <Button
             android:id="@+id/button_d4"
             android:text="@string/dice_d4"
-            android:layout_gravity="left|top" />
+            android:layout_gravity="left|top"
+            android:layout_width="45dp" />
         <Button
             android:id="@+id/button_d6"
             android:text="@string/dice_d6"
-            android:layout_gravity="left|top" />
+            android:layout_gravity="left|top"
+            android:layout_width="45dp"/>
         <Button
             android:id="@+id/button_d8"
             android:text="@string/dice_d8"
-            android:layout_gravity="left|top" />
+            android:layout_gravity="left|top"
+            android:layout_width="45dp"/>
         <Button
             android:id="@+id/button_d10"
             android:text="@string/dice_d10"
-            android:layout_gravity="left|top" />
+            android:layout_gravity="left|top"
+            android:layout_width="45dp"/>
         <Button
             android:id="@+id/button_d12"
             android:text="@string/dice_d12"
-            android:layout_gravity="left|top" />
+            android:layout_gravity="left|top"
+            android:layout_width="45dp"/>
         <Button
             android:id="@+id/button_d20"
             android:text="@string/dice_d20"
-            android:layout_gravity="left|top" />
+            android:layout_gravity="left|top"
+            android:layout_width="45dp"/>
         <Button
             android:id="@+id/button_d100"
             android:text="@string/dice_d100"
-            android:layout_gravity="left|top" />
+            android:layout_gravity="left|top"
+            android:layout_width="50dp"/>
+    </GridLayout>
+    <GridLayout
+        android:id="@+id/grid2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="1"
+        android:layout_below="@id/grid">
         <Button
             android:id="@+id/clear"
+            android:layout_gravity="left|top"
             android:text="@string/clear"
-            android:layout_gravity="left|top" />
+            android:layout_width="70dp"/>
+        <ToggleButton
+            android:id="@+id/sum"
+            android:text="@string/sum"
+            android:layout_gravity="left|top"
+            android:background="@drawable/sum"
+            android:textOn="@string/sum"
+            android:textOff="@string/sum"
+            android:layout_width="70dp"/>
     </GridLayout>
     <ListView
         android:id="@+id/results"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/grid"
-        android:scrollIndicators="left" />
+        android:layout_below="@id/grid2"
+        android:scrollIndicators="left"
+        />
 
 </RelativeLayout>

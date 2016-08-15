@@ -1,4 +1,4 @@
-package com.gm.diceroller;
+package com.gm.diceroller.adapters;
 
 import android.view.LayoutInflater;
 import android.widget.ArrayAdapter;
@@ -6,6 +6,9 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.gm.diceroller.R;
+import com.gm.diceroller.models.RollModel;
 
 import java.util.ArrayList;
 
@@ -30,7 +33,7 @@ public class RollAdapter extends ArrayAdapter<RollModel>{
 
         TextView txtRoll = (TextView) convertView.findViewById(R.id.txtRoll);
 
-        txtRoll.setText(roll.getRoll());
+        txtRoll.setText(roll.getLastRollAsString());
 
         return convertView;
 
