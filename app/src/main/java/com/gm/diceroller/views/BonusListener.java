@@ -1,26 +1,25 @@
 package com.gm.diceroller.views;
 
-import android.content.Intent;
 import android.view.View;
+
 import com.gm.diceroller.presenters.RollPresenter;
 
 /**
  * Created by aaronworsham on 8/15/16.
  */
-public class DiceListener implements View.OnClickListener  {
+public class BonusListener implements View.OnClickListener  {
 
     private RollPresenter mRollPresenter;
-    private int mDie;
+    private int mBonus;
 
-    public DiceListener(RollPresenter rp, int d){
+    public BonusListener(RollPresenter rp, int d){
         this.mRollPresenter = rp;
-        this.mDie = d;
+        this.mBonus = d;
     }
 
     @Override
     public void onClick(View v){
-        this.mRollPresenter.addRollModelToSession(this.mDie);
-
+        this.mRollPresenter.addBonusModelToSession(this.mBonus);
         this.mRollPresenter.postResults();
 
     }

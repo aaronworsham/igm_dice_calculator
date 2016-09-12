@@ -1,35 +1,41 @@
-package com.gm.diceroller;
+package com.gm.diceroller.models;
 
-import com.gm.diceroller.utilities.DiceRoller;
+import com.gm.diceroller.models.RollModel;
 
+import org.junit.Before;
 import org.junit.Test;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by aaronworsham on 8/8/16.
- */
-public class DiceRollerTest {
 
-    @Test
-    public void die4Test(){
+/**
+ * Created by aaronworsham on 8/9/16.
+ */
+public class RollModelTest {
+
+
+    @Test public void testRollDie(){
         int[] dice = {4,6,8,10,12,20,100};
         int x;
         int y;
         int roll;
         int die;
-        DiceRoller DL;
+        RollModel rm;
         for(x = 0; x < dice.length; x++ ){
             die = dice[x];
-            DL = new DiceRoller(die);
+            rm = new RollModel(die);
             for(y = 0; y < 100; y++){
-                roll = DL.roll();
+                roll = rm.roll();
                 assertTrue(roll < die + 1);
                 assertTrue(roll > 0);
             }
 
         }
     }
+
 
 
 

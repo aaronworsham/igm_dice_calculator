@@ -1,13 +1,22 @@
 <resources>
     <string name="app_name">My Dice Roller</string>
     <string name="content_main">This is my Dice Roller app!</string>
-    <string name="dice_d4">4</string>
-    <string name="dice_d6">6</string>
-    <string name="dice_d8">8</string>
-    <string name="dice_d10">10</string>
-    <string name="dice_d12">12</string>
-    <string name="dice_d20">20</string>
-    <string name="dice_d100">100</string>
+    <string name="dice_d4">D4</string>
+    <string name="dice_d6">D6</string>
+    <string name="dice_d8">D8</string>
+    <string name="dice_d10">D10</string>
+    <string name="dice_d12">D12</string>
+    <string name="dice_d20">D20</string>
+    <string name="dice_d100">D100</string>
+    <string name="plus1">+1</string>
+    <string name="plus2">+2</string>
+    <string name="plus3">+3</string>
+    <string name="plus4">+4</string>
+    <string name="plus5">+5</string>
+    <string name="plus6">+6</string>
+    <string name="plus7">+7</string>
+    <string name="plus8">+8</string>
     <string name="sum">Sum</string>
-    <string name="clear">Clear</string>
+    <string name="clearAll">Clear All</string>
+    <string name="clearLast">Clear Last</string>
 </resources>

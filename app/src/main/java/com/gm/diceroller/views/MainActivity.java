@@ -1,58 +1,75 @@
 package com.gm.diceroller.views;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ListView;
-import android.util.Log;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 
 import com.gm.diceroller.DR_Constants;
 import com.gm.diceroller.R;
-import com.gm.diceroller.adapters.RollAdapter;
-import com.gm.diceroller.models.RollModel;
+import com.gm.diceroller.presenters.RollPresenter;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    ArrayList <TextView> mResultsView = new ArrayList<TextView>();
+    RollPresenter mRollPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setupViews();
+        this.mResultsView.add((TextView) findViewById(R.id.results));
+        this.mResultsView.add((TextView) findViewById(R.id.results2));
+        this.mResultsView.add((TextView) findViewById(R.id.results3));
+        mRollPresenter = new RollPresenter(this.mResultsView, getApplicationContext());
+
         setupMVP();
 
     }
 
-    private void setupViews(){
 
-        final ArrayList<RollModel> rolls = new ArrayList<RollModel>();
+
+
+    private void setupMVP(){
+
+        //DiceListener Setup
 
         DR_Constants mCon = new DR_Constants();
 
-        final RollAdapter adapter = new RollAdapter(this, rolls);
 
-        ListView listView = (ListView) findViewById(R.id.results);
-        listView.setAdapter(adapter);
 
+        Resources res = getResources();
 
         for(int i = 0; i< mCon.DICE .length; i++) {
-            Log.i("DICE", "I just got called for Die "+ mCon.DICE[i]);
-            Resources res = getResources();
             int id = res.getIdentifier("button_d" + mCon.DICE[i], "id", this.getPackageName());
             Button b = (Button) findViewById(id);
-            b.setOnClickListener(new diceListener(b,rolls, adapter, mCon.DICE[i]));
+            b.setOnClickListener(new DiceListener(mRollPresenter, mCon.DICE[i]));
+            b.setOnLongClickListener(new DiceLongListener(getApplicationContext()));
         }
+
+        for(int i = 1; i< 9; i++) {
+            int id = res.getIdentifier("plus" + i, "id", this.getPackageName());
+            Button b = (Button) findViewById(id);
+            b.setOnClickListener(new BonusListener(mRollPresenter, i));
+        }
+
+        Button clearAll = (Button) findViewById(R.id.clearAll);
+        clearAll.setOnClickListener(new ClearAllListener(mRollPresenter));
+
+
+        Button clearLast = (Button) findViewById(R.id.clearLast);
+        clearLast.setOnClickListener(new ClearLastListener(mRollPresenter));
 
 
     }
 
-    private void setupMVP(){}
 
 
 }

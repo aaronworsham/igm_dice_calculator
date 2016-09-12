@@ -11,71 +11,158 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="7"
-        android:rowCount="2"
+        android:rowCount="1"
         android:layout_alignParentTop="true">
         <Button
             android:id="@+id/button_d4"
             android:text="@string/dice_d4"
             android:layout_gravity="left|top"
-            android:layout_width="45dp" />
+            android:minHeight="10dp"
+            android:minWidth="0dp"/>
         <Button
             android:id="@+id/button_d6"
             android:text="@string/dice_d6"
             android:layout_gravity="left|top"
-            android:layout_width="45dp"/>
+            android:minHeight="10dp"
+            android:minWidth="0dp"/>
         <Button
             android:id="@+id/button_d8"
             android:text="@string/dice_d8"
             android:layout_gravity="left|top"
-            android:layout_width="45dp"/>
+            android:minHeight="10dp"
+            android:minWidth="0dp"/>
         <Button
             android:id="@+id/button_d10"
             android:text="@string/dice_d10"
             android:layout_gravity="left|top"
-            android:layout_width="45dp"/>
+            android:minHeight="10dp"
+            android:minWidth="0dp"/>
         <Button
             android:id="@+id/button_d12"
             android:text="@string/dice_d12"
             android:layout_gravity="left|top"
-            android:layout_width="45dp"/>
+            android:minHeight="10dp"
+            android:minWidth="0dp"/>
         <Button
             android:id="@+id/button_d20"
             android:text="@string/dice_d20"
             android:layout_gravity="left|top"
-            android:layout_width="45dp"/>
+            android:minHeight="10dp"
+            android:minWidth="0dp"/>
         <Button
             android:id="@+id/button_d100"
             android:text="@string/dice_d100"
             android:layout_gravity="left|top"
-            android:layout_width="50dp"/>
+            android:minHeight="10dp"
+            android:minWidth="0dp"/>
     </GridLayout>
     <GridLayout
         android:id="@+id/grid2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="3"
+        android:columnCount="8"
         android:rowCount="1"
         android:layout_below="@id/grid">
         <Button
-            android:id="@+id/clear"
+            android:id="@+id/plus1"
+            android:text="@string/plus1"
             android:layout_gravity="left|top"
-            android:text="@string/clear"
-            android:layout_width="70dp"/>
-        <ToggleButton
-            android:id="@+id/sum"
-            android:text="@string/sum"
+            android:minHeight="10dp"
+            android:minWidth="0dp"
+            />
+        <Button
+            android:id="@+id/plus2"
+            android:text="@string/plus2"
             android:layout_gravity="left|top"
-            android:background="@drawable/sum"
-            android:textOn="@string/sum"
-            android:textOff="@string/sum"
-            android:layout_width="70dp"/>
+            android:minHeight="10dp"
+            android:minWidth="0dp"
+            />
+        <Button
+            android:id="@+id/plus3"
+            android:text="@string/plus3"
+            android:layout_gravity="left|top"
+            android:minHeight="10dp"
+            android:minWidth="0dp"
+            />
+        <Button
+            android:id="@+id/plus4"
+            android:text="@string/plus4"
+            android:layout_gravity="left|top"
+            android:minHeight="10dp"
+            android:minWidth="0dp"
+            />
+        <Button
+            android:id="@+id/plus5"
+            android:text="@string/plus5"
+            android:layout_gravity="left|top"
+            android:minHeight="10dp"
+            android:minWidth="0dp"
+            />
+        <Button
+            android:id="@+id/plus6"
+            android:text="@string/plus6"
+            android:layout_gravity="left|top"
+            android:minHeight="10dp"
+            android:minWidth="0dp"
+            />
+        <Button
+            android:id="@+id/plus7"
+            android:text="@string/plus7"
+            android:layout_gravity="left|top"
+            android:minHeight="10dp"
+            android:minWidth="0dp"
+            />
+        <Button
+            android:id="@+id/plus8"
+            android:text="@string/plus8"
+            android:layout_gravity="left|top"
+            android:minHeight="10dp"
+            android:minWidth="0dp"
+            />
     </GridLayout>
-    <ListView
+    <GridLayout
+        android:id="@+id/grid3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="1"
+        android:layout_below="@id/grid2">
+        <Button
+            android:id="@+id/clearAll"
+            android:layout_gravity="left|top"
+            android:text="@string/clearAll"
+            android:minHeight="10dp"
+            android:minWidth="0dp"/>
+        <Button
+            android:id="@+id/clearLast"
+            android:layout_gravity="left|top"
+            android:text="@string/clearLast"
+            android:minHeight="10dp"
+            android:minWidth="0dp"/>
+    </GridLayout>
+    <TextView
         android:id="@+id/results"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/grid2"
+        android:layout_below="@id/grid3"
         android:scrollIndicators="left"
+        android:textSize="40dp"
+        />
+    <TextView
+        android:id="@+id/results2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/results"
+        android:scrollIndicators="left"
+
+        />
+    <TextView
+        android:id="@+id/results3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/results2"
+        android:scrollIndicators="left"
+
         />
 
 </RelativeLayout>

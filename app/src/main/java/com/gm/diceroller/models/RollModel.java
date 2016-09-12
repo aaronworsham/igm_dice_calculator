@@ -1,34 +1,34 @@
 package com.gm.diceroller.models;
 
-import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by aaronworsham on 7/25/16.
  */
 public class RollModel {
     final static public int dice[] = {4,6,8,10,12,20,100};
-    public ArrayList rolls = new ArrayList();
-    public RollModel(){
+    private int dieFace;
+    private int roll = 0;
+
+    public RollModel(int dieFace){
         super();
+        this.dieFace = dieFace;
+        this.roll = this.roll();
     }
 
-    public RollModel(int num){
-        super();
-        this.rolls.add(num);
+
+    public Integer roll(){
+        Random rnd = new Random();
+        int r = rnd.nextInt(this.dieFace);
+        return r + 1;
     }
 
-    public String getLastRollAsString(){
-        return String.valueOf(rolls.get(rolls.size() -1));
+    public Integer getTotal(){
+        return this.roll;
     }
 
-//    public String getFullRollsAsString(){
-//        String s = "";
-//        int x = 0;
-//        for (x; x < rolls.size(); x++){
-//            s = s + " " + rolls[x];
-//        }
-//        s = s +
-//        return s;
-//
-//    }
+    public Integer getFace(){
+        return this.dieFace;
+    }
+
 }
